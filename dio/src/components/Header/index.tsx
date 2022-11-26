@@ -28,14 +28,14 @@ const Header = ({ autenticado }: IHeader) => {
     navigate2("/register");
   };
   const handleClickIndex = () => {
-    navigate3("/home");
+    navigate3("/");
   };
 
   return (
     <Wrapper>
       <Container>
         <Row>
-          <Link to="/home">
+          <Link to="/">
             <img
               src={logo}
               alt="Logo da DIO"
@@ -58,7 +58,6 @@ const Header = ({ autenticado }: IHeader) => {
             <UserPicture src="https://avatars.githubusercontent.com/u/79290215?s=400&u=efe94c99e0172651385159a8e3d1138b9563adb4&v=4" />
           ) : (
             <>
-            
               <MenuRight onClick={handleClickIndex}>Home</MenuRight>
               <Button title="Entrar" onClick={handleClickLogin} />
               <Button title="Cadastrar" onClick={handleClickRegister} />

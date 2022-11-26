@@ -38,6 +38,10 @@ const Login = () => {
   const handleClickRegister = () => {
     navigate("/register");
   };
+  const navigateFeed = useNavigate();
+  const handleClickFeed = () => {
+    navigateFeed("/feed");
+  };
 
   const {
     control,
@@ -95,7 +99,11 @@ const Login = () => {
                 type="password"
                 leftIcon={<MdLock />}
               />
-              <Button title="Entrar" variant="secondary" type="submit" />
+              <Button
+                title="Entrar"
+                variant="secondary"
+                onClick={handleClickFeed}
+              />
             </form>
             <Row>
               <EsqueciText>

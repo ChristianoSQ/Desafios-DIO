@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { MdEmail, MdLock } from "react-icons/md";
+import { MdEmail, MdLock, MdPerson } from "react-icons/md";
 import { IFormData } from "./types";
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
@@ -22,6 +22,10 @@ import {
 
 const schema = yup
   .object({
+
+    nome: yup
+      .string()
+      .required("campo obrigatório"),
     email: yup
       .string()
       .email("email não é valido")
@@ -84,10 +88,9 @@ const Register = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <Input
                 name="nome"
-                errorMessage={errors?.email?.message}
                 control={control}
                 placeholder="Nome completo"
-                leftIcon={<MdEmail />}
+                leftIcon={<MdPerson />}
               />
               <Input
                 name="email"
